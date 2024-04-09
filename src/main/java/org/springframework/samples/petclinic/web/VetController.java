@@ -19,11 +19,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.samples.petclinic.model.Vets;
 import org.springframework.samples.petclinic.service.ClinicService;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.Map;
+import org.springframework.web.bind.annotation.RestController;
 
 /**
  * @author Juergen Hoeller
@@ -31,7 +30,7 @@ import java.util.Map;
  * @author Ken Krebs
  * @author Arjen Poutsma
  */
-@Controller
+@RestController
 public class VetController {
 
     private final ClinicService clinicService;
@@ -52,14 +51,12 @@ public class VetController {
     }
 
     @GetMapping(value = "/vets.json", produces = MediaType.APPLICATION_JSON_VALUE)
-    @ResponseBody
     public
     Vets showJsonVetList() {
         return getVets();
     }
 
     @GetMapping(value = "/vets.xml", produces = MediaType.APPLICATION_XML_VALUE)
-    @ResponseBody
     public
     Vets showXmlVetList() {
         return getVets();
