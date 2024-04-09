@@ -87,6 +87,8 @@
         <!-- Docker image -->
         <docker.jib-maven-plugin.version>3.4.0</docker.jib-maven-plugin.version>
         <docker.image.prefix>springcommunity</docker.image.prefix>
+        <sonar.organization>pixee-bot-sunbird</sonar.organization>
+        <sonar.host.url>https://sonarcloud.io</sonar.host.url>
 
     </properties>
 
